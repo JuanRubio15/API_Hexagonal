@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enviar factura · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="enviar" data-title="Enviar factura" data-parent="Operación" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Enviar una factura a staging</h1><p>Pega el JSON tal como lo entrega el software de la IPS. Se traduce con las equivalencias y se valida antes de guardar; los errores de estructura se rechazan y los errores corregibles quedan pendientes con el original.</p></div>
+    <div class="actions"></div>
+  </div>
+
+  <div class="main-side" style="grid-template-columns:minmax(0,1fr) 300px">
+    <section class="card white">
+      <label class="field"><span class="lbl">JSON de la factura</span>
+        <textarea class="input code" id="e-json" spellcheck="false" placeholder='{ "factura": { ... }, "paciente": { ... }, "atenciones": [ ... ] }'></textarea>
+      </label>
+      <div class="toolbar" style="margin:16px 0 0">
+        <button class="btn primary" id="e-enviar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Enviar a staging</button>
+        <button class="btn" id="e-ejemplo">Cargar ejemplo</button>
+        <label class="btn" style="cursor:pointer">Abrir archivo .json<input type="file" id="e-archivo" accept=".json,application/json" hidden></label>
+        <button class="btn" id="e-limpiar" style="margin-left:auto">Limpiar</button>
+      </div>
+      <div id="e-aviso" class="errors" hidden style="margin-top:14px"></div>
+    </section>
+    <aside class="card">
+      <h3 style="margin-bottom:16px">Cómo se procesa</h3>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Se detecta el formato</b><span>JSON de la IPS o ya en formato de la API.</span></div></li>
+        <li><span class="n">2</span><div><b>Se traduce</b><span>Las equivalencias convierten sedes, tipos y formas de pago.</span></div></li>
+        <li><span class="n">3</span><div><b>Se valida</b><span>Campos obligatorios, fechas, montos y reglas del negocio.</span></div></li>
+        <li><span class="n">4</span><div><b>Queda en staging</b><span>Lista para que SysCafé la consulte por fecha.</span></div></li>
+      </ol>
+    </aside>
+  </div>
+</main>
+</div></div>
+
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

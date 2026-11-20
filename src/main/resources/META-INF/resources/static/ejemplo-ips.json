@@ -1,0 +1,67 @@
+{
+  "sistema_origen": "software_ips",
+  "factura": {
+    "numero_interno": "IPS-FV-2026-00852",
+    "tipo_documento": "factura_venta",
+    "fecha_emision": "2026-10-13",
+    "fecha_vencimiento": "2026-10-20",
+    "sede_atencion": "Sede Villanueva",
+    "observaciones": "Atenciones medicas del mes de octubre",
+    "periodo_facturado_desde": "2026-10-01",
+    "periodo_facturado_hasta": "2026-10-13"
+  },
+  "paciente": {
+    "tipo_identificacion": "NIT",
+    "numero_identificacion": "900123456",
+    "digito_verificacion": "7",
+    "nombre": "Clinica Demo SAS",
+    "direccion": "Calle 10 # 20-30",
+    "telefono": "6076000000",
+    "correo": "facturacion@example.com",
+    "codigo_municipio": "68001"
+  },
+  "responsable_pago": {
+    "tipo": "entidad",
+    "nombre": "EPS Demo",
+    "nit": "800123456"
+  },
+  "atenciones": [
+    {
+      "codigo_servicio": "CONS-001",
+      "nombre_servicio": "Consulta medica general",
+      "cantidad": 2,
+      "valor_unitario": 50000,
+      "porcentaje_iva": 0
+    },
+    {
+      "codigo_servicio": "LAB-015",
+      "nombre_servicio": "Examen de laboratorio",
+      "cantidad": 1,
+      "valor_unitario": 35000,
+      "porcentaje_iva": 0
+    }
+  ],
+  "informacion_facturacion": {
+    "modalidad_pago": "01",
+    "cobertura_plan_beneficios": "01",
+    "numero_contrato": "CONTRATO001",
+    "numero_poliza": "",
+    "copago": 0,
+    "cuota_moderadora": 15000,
+    "pagos_compartidos": 0,
+    "anticipos": 0
+  },
+  "pago": {
+    "metodo": "transferencia_bancaria",
+    "referencia": "TRX-784521",
+    "fecha": "2026-10-13",
+    "valor": 135000
+  },
+  "descuentos": [
+    {
+      "tipo": "descuento_convenio",
+      "descripcion": "Descuento por convenio institucional",
+      "valor": 5000
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi cuenta · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="cuenta" data-title="Mi cuenta" data-parent="Cuenta" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Mi cuenta</h1><p>Datos del usuario y de la sesión actual.</p></div>
+    <div class="actions"></div>
+  </div>
+
+  <section class="card">
+    <div class="profile-head">
+      <span class="avatar" aria-hidden="true">OP</span>
+      <div><h3 style="font-size:17px" id="account-title">Operador</h3><p class="muted">Usuario de acceso al sistema Punto y coma</p></div>
+      <button class="btn" style="margin-left:auto" data-pendiente>Cambiar foto</button>
+    </div>
+  </section>
+
+  <div class="two">
+    <section class="card white">
+      <h3 style="margin-bottom:16px">Perfil</h3>
+      <div class="grid-form">
+        <label class="field"><span class="lbl">Usuario</span><input class="input" id="account-user" disabled></label>
+        <label class="field"><span class="lbl">Correo</span><input disabled class="input" type="email" placeholder="correo@empresa.com"></label>
+        <label class="field full"><span class="lbl">Nombre completo</span><input class="input" placeholder="Nombre y apellidos"></label>
+      </div>
+      <div class="dlg-actions" style="margin-top:18px"><button class="btn primary" data-pendiente>Guardar cambios</button></div>
+    </section>
+
+    <section class="card white">
+      <h3 style="margin-bottom:16px">Seguridad</h3>
+      <div class="grid-form">
+        <label class="field full"><span class="lbl">Contraseña actual</span><input disabled class="input" type="password" placeholder="••••••••"></label>
+        <label class="field"><span class="lbl">Nueva contraseña</span><input disabled class="input" type="password" placeholder="Nueva contraseña"></label>
+        <label class="field"><span class="lbl">Confirmar</span><input disabled class="input" type="password" placeholder="Repite la contraseña"></label>
+      </div>
+      <div class="dlg-actions" style="margin-top:18px"><button class="btn primary" data-pendiente>Actualizar contraseña</button></div>
+    </section>
+  </div>
+
+  <section class="card white">
+    <div class="card-head" style="margin:0"><div><h3>Sesión</h3><p class="sub">Tu sesión usa un token que vence automáticamente. Al cerrar sesión se elimina de este navegador.</p></div>
+      <button class="btn danger" id="cuenta-salir">Cerrar sesión</button></div>
+  </section>
+</main>
+</div></div>
+
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

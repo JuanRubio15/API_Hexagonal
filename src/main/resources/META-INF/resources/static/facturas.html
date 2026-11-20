@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturas · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="facturas" data-title="Facturas" data-parent="Operación" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Facturas</h1><p>Documentos recibidos de la IPS, validados y guardados en staging.</p></div>
+    <div class="actions">
+      
+      <button class="btn" id="f-exportar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>Exportar</button>
+      <a class="btn primary" href="enviar-factura.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Enviar factura</a>
+    </div>
+  </div>
+
+  <div class="seg" role="group" aria-label="Vista de facturas" style="justify-self:start">
+    <a href="facturas.html" aria-current="page">En staging</a>
+    <a href="consulta-syscafe.html">Como las ve SysCafé</a>
+  </div>
+
+  <section class="stats" id="stats-facturas" aria-label="Resumen de estados"></section>
+
+  <section class="card white">
+    <div class="toolbar">
+      <div class="grow input-wrap"><svg class="ico lead" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="input" id="f-buscar" type="search" placeholder="Buscar por número, documento externo, NIT o cliente" aria-label="Buscar facturas"></div>
+      <select class="input" id="f-estado" aria-label="Estado"><option value="">Todos los estados</option><option value="validada">Convertida</option></select>
+      <select class="input" id="f-tipo" aria-label="Tipo"><option value="">Todos los tipos</option><option value="FV1">Factura de venta</option><option value="NC1">Nota crédito</option></select>
+      <button class="btn" id="f-refrescar">Actualizar</button>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Número</th><th>Doc. externo</th><th>Cliente</th><th>Fecha</th><th>Tipo</th><th class="r">Total</th><th>Estado</th><th></th></tr></thead>
+      <tbody id="tabla-facturas"></tbody>
+    </table></div>
+    <div class="pager"><span id="f-conteo"></span>
+      
+    </div>
+  </section>
+</main>
+</div></div>
+
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

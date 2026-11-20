@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Punto y coma · Sistema de facturación</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing">
+<div class="land">
+
+  <aside class="land-rail">
+    <a href="inicio.html" aria-label="Punto y coma"><img src="img/logo-dragon-morado.png" alt="Punto y coma" width="30" height="40"></a>
+    <div class="soc" id="land-soc"></div>
+  </aside>
+
+  <div class="land-main">
+    <section class="hero" id="hero">
+      <nav class="land-nav" aria-label="Principal">
+        <a href="inicio.html" aria-current="page">Inicio</a>
+        <a href="registro.html">Registro</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#" data-pendiente>Nosotros</a>
+        <a href="#" data-pendiente>Contacto</a>
+        <span class="tools" id="land-tools"></span>
+      </nav>
+
+      <div class="hero-body">
+        <span class="eyebrow">Soluciones profesionales</span>
+        <h1>Punto y coma</h1>
+        <p>Una plataforma que recibe las facturas de tu IPS, las traduce con equivalencias a medida y las entrega a SysCafé ya validadas, para que facturar sea claro, ordenado y sin reprocesos.</p>
+        <button class="cta" id="cta">Sistema de Facturación</button>
+      </div>
+    </section>
+
+    <section class="features" id="servicios" aria-label="Servicios">
+      <article><h3>Facturación confiable</h3><p>Cada documento se valida antes de guardarse, con reglas claras y mensajes de error comprensibles.</p></article>
+      <article><h3>Equivalencias flexibles</h3><p>Traduce sedes, tipos de documento y formas de pago de la IPS a los códigos que usa SysCafé.</p></article>
+      <article><h3>Integración con SysCafé</h3><p>Entrega las facturas por fecha en el formato exacto que SysCafé espera consultar.</p></article>
+    </section>
+  </div>
+</div>
+
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script>
+  // Iconos decorativos (redes de la barra izquierda y búsqueda/carrito del menú)
+  document.getElementById('land-soc').innerHTML =
+    ['dribbble','behance','instagram'].map(n=>`<a href="#" data-n="${n}" aria-label="${n}">${BRAND[n]}</a>`).join('');
+  document.getElementById('land-tools').innerHTML =
+    `<a href="#" data-pendiente aria-label="Buscar">${ICON('search')}</a><a href="#" data-pendiente aria-label="Carrito">${ICON('bag')}</a>`;
+  // Los botones aún sin función avisan; el botón principal lleva al login
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-pendiente], #land-soc a');
+    if(!b) return;
+    e.preventDefault();
+    const t = document.createElement('div'); t.className = 'toast'; t.textContent = 'Esta sección se conectará en la siguiente etapa.';
+    document.getElementById('toasts').appendChild(t); setTimeout(()=>t.remove(), 3200);
+  });
+  document.getElementById('cta').addEventListener('click', () => { location.href = 'login.html'; });
+  // Foto del hero: se usa solo si existe static/img/hero.jpg
+
+</script>
+</body>
+</html>

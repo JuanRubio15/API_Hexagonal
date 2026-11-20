@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equivalencias · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="equivalencias" data-title="Equivalencias" data-parent="Catálogos" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Equivalencias</h1><p>Cada fila dice cómo se traduce un valor que llega de la IPS al valor que usa SysCafé.</p></div>
+    <div class="actions"><button class="btn primary" data-abrir="dlg-equiv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Nueva equivalencia</button></div>
+  </div>
+
+  <section class="flow" aria-label="Recorrido de un dato">
+    <div class="node"><small>Llega de la IPS</small><b>Sede Norte</b></div>
+    <span class="arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <div class="node"><small>Punto y coma traduce</small><b>factura.sede_atencion → bodega</b></div>
+    <span class="arrow"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <div class="node"><small>Entrega a SysCafé</small><b>NOR</b></div>
+  </section>
+
+  <section class="card white">
+    <div class="toolbar">
+      <select class="input" id="q-categoria" aria-label="Categoría"><option value="">Todas las categorías</option></select>
+      <div class="grow input-wrap"><svg class="ico lead" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="input" id="q-buscar" type="search" placeholder="Buscar un campo o un valor" aria-label="Buscar equivalencias"></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Categoría</th><th>Campo de la IPS</th><th>Campo de SysCafé</th><th>Traducción</th><th></th></tr></thead>
+      <tbody id="tabla-equiv"></tbody>
+    </table></div>
+    <div class="pager"><span id="q-conteo"></span></div>
+  </section>
+</main>
+</div></div>
+
+<dialog id="dlg-equiv">
+  <form class="dlg" onsubmit="return false" novalidate>
+    <h3>Nueva equivalencia</h3>
+    <div class="grid-form">
+      <label class="field full"><span class="lbl">Categoría (tabla donde terminan los datos)</span>
+        <select class="input" name="categoria"><option>clientes</option><option>documentos</option><option>items</option><option>forma_pago</option><option>ajustes</option><option>datos_salud</option></select></label>
+      <label class="field"><span class="lbl">Campo de la IPS</span><input class="input" name="campo_origen" placeholder="factura.sede_atencion"></label>
+      <label class="field"><span class="lbl">Campo de SysCafé</span><input class="input" name="campo_destino" placeholder="bodega"></label>
+      <label class="field"><span class="lbl">Valor de la IPS</span><input class="input" name="valor_origen" placeholder="Sede Norte"></label>
+      <label class="field"><span class="lbl">Valor de SysCafé</span><input class="input" name="valor_destino" placeholder="NOR"></label>
+      <p class="muted full" style="font-size:12.5px">Llena los dos valores o déjalos vacíos los dos si solo relacionas campos.</p>
+    </div>
+    <div class="dlg-actions"><button type="button" class="btn" data-cerrar>Cancelar</button><button type="button" class="btn primary" data-save>Guardar equivalencia</button></div>
+  </form>
+</dialog>
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

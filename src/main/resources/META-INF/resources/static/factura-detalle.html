@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detalle de factura · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="factura-detalle" data-title="Detalle de factura" data-parent="Facturas" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div>
+    <a class="back" href="facturas.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Volver a facturas</a>
+    <div class="page-head">
+      <div><h1 id="d-numero">Factura</h1><p id="d-detalle"></p></div>
+      <div class="actions">
+        
+        <span id="d-estado"></span>
+        <button class="btn primary" id="download-invoice">Descargar factura PDF</button>
+        <button class="btn" id="download-json"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>Descargar JSON</button>
+        <button class="btn danger" id="delete-invoice">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="card"><h3 style="margin-bottom:14px">Datos del documento</h3><div class="info-grid" id="d-info"></div></section>
+
+  <div class="main-side" style="grid-template-columns:minmax(0,1fr) 300px">
+    <section class="card white">
+      <h3 style="margin-bottom:14px">Ítems facturados</h3>
+      <div class="table-wrap"><table><thead><tr><th>Referencia</th><th>Servicio</th><th class="r">Cant.</th><th class="r">Vr. unitario</th><th class="r">IVA</th><th class="r">Vr. total</th></tr></thead><tbody id="d-items"></tbody></table></div>
+      <h3 style="margin:22px 0 14px">Formas de pago</h3>
+      <div class="table-wrap"><table><thead><tr><th>Forma</th><th>Vence</th><th class="r">Cuota</th><th>Tercero</th><th class="r">Valor</th></tr></thead><tbody id="d-pagos"></tbody></table></div>
+    </section>
+    <aside class="card">
+      <h3 style="margin-bottom:14px">Resumen</h3>
+      <div class="summary" id="d-resumen"></div>
+      <div style="display:grid;gap:10px;margin-top:20px">
+        <button class="btn primary block" data-pendiente>Enviar a SysCafé</button>
+        <button class="btn block" id="edit-invoice">Editar documento</button>
+      </div>
+    </aside>
+  </div>
+</main>
+</div></div>
+
+<dialog id="dlg-factura" aria-labelledby="edit-invoice-title">
+  <div class="dlg">
+    <h3 id="edit-invoice-title">Editar factura</h3>
+    <label class="field"><span class="lbl">JSON de la factura convertida</span>
+      <textarea class="input code" id="edit-invoice-json" spellcheck="false"></textarea>
+    </label>
+    <div class="dlg-actions">
+      <button type="button" class="btn" data-cerrar>Cancelar</button>
+      <button type="button" class="btn primary" id="save-invoice">Guardar cambios</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

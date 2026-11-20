@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear cuenta · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+<main class="auth">
+  <section class="auth-art" aria-hidden="true">
+    <img src="img/logo-dragon-blanco.png" alt="" width="260" height="350">
+  </section>
+
+  <section class="auth-panel">
+    <form class="auth-box center" id="registro-form" autocomplete="on" novalidate>
+      <img class="auth-logo" src="img/icono-formulario.png" alt="Punto y coma" width="30" height="33">
+      <h1>Crear una cuenta</h1>
+      <button type="button" class="btn-google" data-deco><span data-brand="google"></span>Crear cuenta con Google</button>
+      <div class="divider" style="width:100%">O</div>
+
+      <label class="field"><span class="lbl">Correo electrónico</span><input class="input" name="email" type="email" placeholder="Ingresa tu correo electrónico" autocomplete="email"></label>
+      <label class="field"><span class="lbl">Nombre completo</span><input class="input" name="nombre" placeholder="Ingresa tu nombre completo" autocomplete="name"></label>
+      <label class="field"><span class="lbl">Contraseña</span>
+        <span class="input-wrap"><input class="input" name="password" type="password" placeholder="Crea tu contraseña" autocomplete="new-password">
+        <button type="button" class="eye" data-eye aria-label="Mostrar contraseña"></button></span></label>
+
+      <button class="btn-main round" type="submit" style="margin-top:6px">Crear cuenta</button>
+      <p class="auth-alt">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+      <div class="socials" id="socials"></div>
+    </form>
+  </section>
+</main>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

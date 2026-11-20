@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consulta SysCafé · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="syscafe" data-title="Consulta SysCafé" data-parent="Operación" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Consulta SysCafé</h1><p>Es la misma respuesta que recibe SysCafé al llamar a /GetFacturas con una fecha.</p></div>
+    <div class="actions"></div>
+  </div>
+
+  <div class="seg" role="group" aria-label="Vista de facturas" style="justify-self:start">
+    <a href="facturas.html">En staging</a>
+    <a href="consulta-syscafe.html" aria-current="page">Como las ve SysCafé</a>
+  </div>
+
+  <section class="card white">
+    <div class="toolbar">
+      <label class="field" style="display:flex;align-items:center;gap:10px"><span class="lbl" style="margin:0">Fecha</span><input class="input" type="date" id="g-fecha"  style="width:auto"></label>
+      <label>Página (0 = todas) <input class="input" id="g-page" type="number" min="0" step="1" value="0" style="width:6em"></label> <button class="btn primary" id="g-consultar">Consultar</button>
+      <button class="btn" id="g-copiar">Copiar JSON</button>
+      <span class="tag brand plain" id="g-resumen"></span>
+    </div>
+    <pre class="code" id="g-json" aria-label="Respuesta de SysCafé"></pre>
+  </section>
+</main>
+</div></div>
+
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

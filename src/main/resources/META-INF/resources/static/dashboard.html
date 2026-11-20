@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumen · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="dashboard" data-title="Resumen" data-parent="Panel" data-right="true">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Resumen</h1><p>Vista general de la facturación que llega desde la IPS y se entrega a SysCafé.</p></div>
+    <div class="actions">
+      <button class="btn" id="download-history">Historial en PDF</button>
+      
+      
+    </div>
+  </div>
+
+  <!-- Tarjetas pastel: se llenan con DEMO.dashboard.stats -->
+  <section class="stats" id="stats" aria-label="Indicadores"></section>
+
+  <section class="main-side">
+    <article class="card">
+      <div class="card-head">
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true">Total facturado</button>
+          <button role="tab" aria-selected="false" data-pendiente>Facturas emitidas</button>
+          <button role="tab" aria-selected="false" data-pendiente>Estado de envío</button>
+        </div>
+        <div class="legend"><span><i style="background:#16161D"></i>Este año</span><span><i style="background:#B9B9C8"></i>Año pasado</span></div>
+      </div>
+      <div id="chart-line"></div>
+    </article>
+    <article class="card">
+      <h3>Facturas por sede</h3>
+      <div class="rank" style="margin-top:14px"><ul id="rank-sedes"></ul></div>
+    </article>
+  </section>
+
+  <section class="two">
+    <article class="card">
+      <h3>Facturas por forma de pago</h3>
+      <div id="chart-bars" style="margin-top:14px"></div>
+    </article>
+    <article class="card">
+      <h3>Participación por tercero de pago</h3>
+      <div class="donut-wrap" style="margin-top:14px"><div id="chart-donut"></div><div class="donut-legend" id="donut-legend"></div></div>
+    </article>
+  </section>
+
+  <section class="card white">
+    <div class="card-head">
+      <div><h3>Últimas facturas</h3><p class="sub">Las más recientes recibidas en staging</p></div>
+      <a class="btn primary" href="enviar-factura.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Enviar factura</a>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Número</th><th>Cliente</th><th>Fecha</th><th>Sede</th><th class="r">Total</th><th>Estado</th></tr></thead><tbody id="tabla-recientes"></tbody></table></div>
+  </section>
+
+</main>
+</div></div>
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>

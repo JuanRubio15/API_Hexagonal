@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iniciar sesión · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+<main class="auth">
+  <section class="auth-art" aria-hidden="true">
+    <img src="img/logo-dragon-blanco.png" alt="" width="260" height="350">
+  </section>
+
+  <section class="auth-panel">
+    <form class="auth-box" id="login-form" autocomplete="on" novalidate>
+      <img class="auth-logo" src="img/icono-formulario.png" alt="Punto y coma" width="30" height="33">
+      <h1 style="margin-top:10px">Bienvenido de nuevo <span aria-hidden="true"></span></h1>
+      <p class="sub">Nos alegra verte de nuevo</p>
+
+      <label class="field" style="margin-top:14px"><span class="lbl">Usuario*</span>
+        <input class="input" name="usuario" placeholder="Ingresa tu usuario" autocomplete="username" required autofocus></label>
+      <label class="field"><span class="lbl">Contraseña</span>
+        <span class="input-wrap"><input class="input" name="password" type="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required>
+        <button type="button" class="eye" data-eye aria-label="Mostrar contraseña"></button></span></label>
+      <label class="check"><input type="checkbox" checked> Acepto los términos y condiciones</label>
+      <ul class="errors" id="login-errores" hidden></ul>
+      <button class="btn-main" type="submit" id="login-btn">Iniciar sesión</button>
+      <div class="divider">o</div>
+      <button type="button" class="btn-google black" data-deco><span data-brand="google"></span>Iniciar sesión con Google</button>
+      <p class="auth-alt">¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+    </form>
+  </section>
+</main>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

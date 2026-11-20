@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clientes · Punto y coma</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/punto.css">
+</head>
+<body data-page="clientes" data-title="Clientes" data-parent="Catálogos" data-right="false">
+<div class="app"><div class="stage">
+<main class="content" id="contenido">
+
+  <div class="page-head">
+    <div><h1>Clientes</h1><p>Datos de los pacientes que figuran como clientes en la factura.</p></div>
+    <div class="actions"><button class="btn primary" data-abrir="dlg-cliente"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Nuevo cliente</button></div>
+  </div>
+  <section class="stats" id="stats-clientes" aria-label="Resumen de clientes"></section>
+  <section class="card white">
+    <div class="toolbar">
+      <div class="grow input-wrap"><svg class="ico lead" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="input" id="c-buscar" type="search" placeholder="Buscar por NIT, nombre o correo" aria-label="Buscar clientes"></div>
+      <select class="input" id="c-clase" aria-label="Tipo de identificación"><option value="">Todos los tipos</option><option value="N">NIT</option><option value="C">Cédula</option><option value="E">Extranjería</option><option value="T">Tarjeta</option><option value="P">Registro civil</option><option value="A">Pasaporte</option></select>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Cliente</th><th>Identificación</th><th>Ciudad</th><th>Contacto</th><th class="r">Facturas</th><th></th></tr></thead>
+      <tbody id="tabla-clientes"></tbody>
+    </table></div>
+  </section>
+</main>
+</div></div>
+
+<dialog id="dlg-cliente">
+  <form class="dlg" onsubmit="return false" novalidate>
+    <h3>Nuevo cliente</h3>
+    <div class="grid-form">
+      <label class="field"><span class="lbl">NIT o documento</span><input class="input" name="nit" maxlength="20" inputmode="numeric"></label>
+      <label class="field"><span class="lbl">Dígito de verificación</span><input class="input" name="dv" maxlength="1"></label>
+      <label class="field"><span class="lbl">Tipo de identificación</span>
+        <select class="input" name="claseid"><option value="N">N · NIT</option><option value="C">C · Cédula de ciudadanía</option><option value="E">E · Cédula de extranjería</option><option value="T">T · Tarjeta de identidad</option><option value="P">P · Registro civil</option><option value="A">A · Pasaporte</option></select></label>
+      <label class="field"><span class="lbl">Ciudad (código)</span><input class="input" name="ciudad" maxlength="5"></label>
+      <label class="field full"><span class="lbl">Nombre o razón social</span><input class="input" name="nom1" maxlength="80"></label>
+      <label class="field"><span class="lbl">Primer apellido</span><input class="input" name="ape1" maxlength="20"></label>
+      <label class="field"><span class="lbl">Segundo apellido</span><input class="input" name="ape2" maxlength="20"></label>
+      <label class="field full"><span class="lbl">Dirección</span><input class="input" name="dir" maxlength="60"></label>
+      <label class="field"><span class="lbl">Teléfono</span><input class="input" name="tel" maxlength="30"></label>
+      <label class="field"><span class="lbl">Correo</span><input class="input" name="email" type="email" maxlength="60"></label>
+    </div>
+    <div class="dlg-actions"><button type="button" class="btn" data-cerrar>Cancelar</button><button type="button" class="btn primary" data-save>Guardar cliente</button></div>
+  </form>
+</dialog>
+<script src="js/icons.js"></script>
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/vistas.js"></script>
+</body>
+</html>
