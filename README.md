@@ -16,7 +16,7 @@ Proyecto del curso **Desarrollo Orientado a Servicios 2026-2** (Universidad Sant
 
 Usuario inicial: `profe` · Contraseña: `cloud2026` (rol Administrador). Se crea solo la primera vez, desde `billing.user` y `billing.password` de `application.properties`. Cámbiala antes de entregar o desplegar.
 Usuario con rol de operador: `operador1` · Contraseña: `clave-segura1`
-Usuario con rol de operador: `visor1` · Contraseña: `clave-segura1`
+Usuario con rol de visor: `visor1` · Contraseña: `clave-segura1`
 
 Otras rutas útiles:
 
@@ -193,3 +193,56 @@ Quarkus 3 · Quarkus REST + Jackson · Qute · Hibernate ORM · MySQL/MariaDB ·
 | "Sin rol" en el menú | Cierra sesión y vuelve a entrar (el rol se guarda al iniciar sesión) |
 
 > Hibernate con `update` crea tablas y columnas nuevas, pero **no modifica** columnas que ya existen. Si cambias el tipo de una columna en una entidad, hay que alterarla a mano o recrear la base (`DROP DATABASE billing;`).
+
+## Capturas de funcionamiento
+
+### Inicio de sesión
+![Pantalla de inicio de sesión](docs/img/login-admin.png)
+
+### Registro de cuenta
+![Pantalla de registro de cuenta nueva](docs/img/registro.png)
+
+### Dashboard de administrador
+![Dashboard de Administrador](docs/img/dashboard-admin.png)
+
+### Facturas registradas
+![Pantalla de facturas registradas](docs/img/facturas.png)
+
+### Enviar facturas
+![Registro y envio de facturas](docs/img/enviar-facturas.png)
+
+### Editar una factura
+![Editar una factura](docs/img/editar-factura.png)
+
+### Consultar en SysCafé
+![Consultar en SysCafé](docs/img/consulta-syscafe.png)
+
+### Clientes
+![Clientes de SysCafé](docs/img/clientes.png)
+
+### Registrar nuevo cliente
+![Registrar nuevo cliente](docs/img/nuevo-cliente.png)
+
+### Editar un cliente
+![Editar un cliente](docs/img/editar-cliente.png)
+
+### Equivalencias
+![Equivalencias, diccionario de SysCafé](docs/img/equivalencias.png)
+
+### Crear una equivalencia
+![Crear una equivalencia](docs/img/nueva-equivalencia.png)
+
+### Editar una equivalencia
+![Editar una equivalencia](docs/img/editar-equivalencias.png)
+
+### Configuración de la cuenta
+![Configuración de la cuenta](docs/img/cuenta.png)
+
+### Dashboard de visor
+![Dashboard con rol visor](docs/img/dashboard-visor.png)
+
+### Dashboard de operador
+![Dashboard con rol operador](docs/img/dashboard-operador.png)
+
+### Swagger
+![Documentación en swagger](docs/img/swagger.png)
